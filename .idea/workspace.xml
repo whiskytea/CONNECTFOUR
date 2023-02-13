@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4fc449d-42d9-4808-93fb-5eae48ca2480" name="Changes" comment="">
+<<<<<<< Updated upstream
+=======
+      <change afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/Board.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Board.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Game.js" afterDir="false" />
@@ -38,17 +42,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -59,7 +65,12 @@
       <updated>1676088825305</updated>
       <workItem from="1676088828153" duration="1676000" />
       <workItem from="1676091273230" duration="1158000" />
+<<<<<<< Updated upstream
       <workItem from="1676092935488" duration="11202000" />
+=======
+      <workItem from="1676092935488" duration="6706000" />
+      <workItem from="1676324013807" duration="430000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

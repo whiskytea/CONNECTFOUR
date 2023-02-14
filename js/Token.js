@@ -5,6 +5,18 @@ class Token{
         this.inPlay = false;
 
     }
+
+    drawHTMLToken(){
+        const div = document.createElement('DIV');
+        div.setAttribute(ID, this.id);
+        div.setAttribute(CLASS, 'token');
+        div.style.backgroundColor = this.player.color;
+        document.querySelector('game-board-overlay').appendChild(div);
+    }
+
+    get htmlToken(){
+        return this.drawHTMLToken();
+    }
 }
 
 //token color

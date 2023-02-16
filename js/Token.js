@@ -1,17 +1,17 @@
 class Token{
-    constructor(player) {
+    constructor(index, player) {
         this.player = player;
-        this.id = `token-${index}-${owner.id}`;
+        this.id = `token-${index}-${player.id}`;
         this.inPlay = false;
 
     }
 
     drawHTMLToken(){
-        const div = document.createElement('DIV');
-        div.setAttribute(ID, this.id);
-        div.setAttribute(CLASS, 'token');
-        div.style.backgroundColor = this.player.color;
-        document.querySelector('game-board-overlay').appendChild(div);
+        const token = document.createElement('DIV');
+        token.setAttribute('id', this.id);
+        token.setAttribute('class', 'token');
+        token.style.backgroundColor = this.player.color;
+        document.getElementById('game-board-overlay').appendChild(token);
     }
 
     get htmlToken(){

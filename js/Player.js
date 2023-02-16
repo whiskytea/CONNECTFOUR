@@ -10,11 +10,19 @@ class Player{
 
     createTokens(num) {
         const tokens = [];
-        for (i = 0, i < num, i++){
+        for (let i = 0; i < num; i++){
             let token = new Token(i, this);
             tokens.push(token);
         }
         return tokens;
+    }
+
+    get unusedTokens(){
+        return this.tokens.filter(token => !token.inPlay);
+    }
+
+    get activeToken(){
+        return this.unusedTokens[0];
     }
 }
 

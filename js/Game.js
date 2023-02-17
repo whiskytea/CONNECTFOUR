@@ -1,4 +1,4 @@
-//game container
+ //game container
 //class to handle pieces
 //class to handle players
 //way to place pieces and remember location
@@ -32,6 +32,12 @@ class Game{
         this.board.drawHTMLBoard();
         this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
+    }
+
+    handleKeydown(){
+        document.addEventListener('keydown', function (event){
+            console.log(event.key);
+        })
     }
 
 }

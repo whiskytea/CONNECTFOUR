@@ -34,4 +34,21 @@ class Game{
         this.ready = true;
     }
 
+    // HANDLE KEY COMMANDS
+    handleKeydown(e){
+        if(this.ready){ //checks if the game is ready, then continues
+            if(e.key === 'ArrowLeft'){
+                //if there is an available left column, move left one
+                this.activePlayer.activeToken.moveLeft();
+            }else if(e.key === 'ArrowRight'){
+                //if there is an available right column, move right one
+                this.activePlayer.activeToken.moveRight();
+            }else if(e.key === 'ArrowDown'){
+                //if the column is not full, drop the token down to the lowest
+                //available space
+            }
+        }
+
+    }
+
 }

@@ -42,7 +42,7 @@ class Game{
                 this.activePlayer.activeToken.moveLeft();
             }else if(e.key === 'ArrowRight'){
                 //if there is an available right column, move right one
-                this.activePlayer.activeToken.moveRight();
+                this.activePlayer.activeToken.moveRight(this.board.columns);
             }else if(e.key === 'ArrowDown'){
                 //if the column is not full, drop the token down to the lowest
                 //available space

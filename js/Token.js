@@ -15,7 +15,7 @@ class Token{
     }
 
     get htmlToken(){
-        return this.drawHTMLToken();
+        return document.getElementById(this.id);
     }
 
     get offsetLeft(){
@@ -23,18 +23,24 @@ class Token{
     }
 
     moveLeft(){
-        if (this.columnLocation !== 0){
-            this.columnLocation -= 1;
+        if (this.columnLocation > 0){
             this.htmlToken.style.left = this.offsetLeft - 76;
+            this.columnLocation -= 1;
         }
     }
 
-    moveRight(){
-        if (this.columnLocation !== 7){
+    moveRight(columns){
+        if (this.columnLocation < columns - 1){
+            this.htmlToken.style.left = this.offsetLeft + 76;
             this.columnLocation += 1;
-            this.htmlToken.style.right = this.offsetLeft + 76;
         }
     }
+
+    drop(target, reset){
+        this.token = target;
+        token.inPlay = true;
+    }
+
 }
 
 //token color

@@ -151,3 +151,11 @@ circle {
 	right: 0;
 }
 
+/*CSS ANIMATE THE TOKEN DROP*/
+@keyframes drop{
+    to {background-color: 'pink'};
+}
+
+.animation{
+    animation-name: drop;
+}

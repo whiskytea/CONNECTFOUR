@@ -34,6 +34,19 @@ class Game{
         this.ready = true;
     }
 
+    playToken(){
+        //loop through the column spaces from furthest to closest
+        let dropColumn = this.board.spaces[this.activePlayer.activeToken];
+        for (let i = dropColumn.length(); i > 0; i--){ //goes through the column from bottom to top
+            if (dropcolumn[i].token === null){
+                dropColumn[i].token = this.
+            }
+        }
+        //check games state for a winner
+        //swap active player
+        //load up next token
+    }
+
     // HANDLE KEY COMMANDS
     handleKeydown(e){
         if(this.ready){ //checks if the game is ready, then continues
@@ -46,6 +59,7 @@ class Game{
             }else if(e.key === 'ArrowDown'){
                 //if the column is not full, drop the token down to the lowest
                 //available space
+                this.playToken();
             }
         }
 

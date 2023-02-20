@@ -15,7 +15,7 @@ class Token{
     }
 
     get htmlToken(){
-        return this.drawHTMLToken();
+        return document.getElementById(this.id);
     }
 
     get offsetLeft(){

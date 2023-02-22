@@ -34,10 +34,34 @@ class Game{
         this.ready = true;
     }
 
-    handleKeydown(){
-        document.addEventListener('keydown', function (event){
-            console.log(event.key);
-        })
+    playToken(){
+        //loop through the column spaces from furthest to closest
+        let dropColumn = this.board.spaces[this.activePlayer.activeToken];
+        for (let i = dropColumn.length(); i > 0; i--){ //goes through the column from bottom to top
+            if (dropcolumn[i].token === null){
+                dropColumn[i].token = this.
+            }
+        }
+        //check games state for a winner
+        //swap active player
+        //load up next token
+    }
+
+    // HANDLE KEY COMMANDS
+    handleKeydown(e){
+        if(this.ready){ //checks if the game is ready, then continues
+            if(e.key === 'ArrowLeft'){
+                //if there is an available left column, move left one
+                this.activePlayer.activeToken.moveLeft();
+            }else if(e.key === 'ArrowRight'){
+                //if there is an available right column, move right one
+                this.activePlayer.activeToken.moveRight();
+            }else if(e.key === 'ArrowDown'){
+                //if the column is not full, drop the token down to the lowest
+                //available space
+                this.playToken();
+            }
+        }
     }
 
 }

@@ -3,7 +3,7 @@ class Token{
         this.player = player;
         this.id = `token-${index}-${player.id}`;
         this.inPlay = false;
-
+        this.columnLocation = 0;
     }
 
     drawHTMLToken(){
@@ -11,11 +11,29 @@ class Token{
         token.setAttribute('id', this.id);
         token.setAttribute('class', 'token');
         token.style.backgroundColor = this.player.color;
-        document.getElementById('game-board-overlay').appendChild(token);
+        document.getElementById('game-board-underlay').appendChild(token);
     }
 
     get htmlToken(){
-        return this.drawHTMLToken();
+        return document.getElementById(this.id);
+    }
+
+    get offsetLeft(){
+        return this.htmlToken.offsetLeft;
+    }
+
+    moveLeft(){
+        if (this.columnLocation !== 0){
+            this.columnLocation -= 1;
+            this.htmlToken.style.left = this.offsetLeft - 76;
+        }
+    }
+
+    moveRight(){
+        if (this.columnLocation !== 7){
+            this.columnLocation += 1;
+            this.htmlToken.style.right = this.offsetLeft + 76;
+        }
     }
 }
 

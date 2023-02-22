@@ -1,16 +1,16 @@
-class Board{
-    constructor(rows = 6,columns = 7){
+class Board {
+    constructor(rows = 6, columns = 7) {
         this.rows = rows;
         this.columns = columns;
         this.spaces = this.createSpaces();
     }
 
-    createSpaces(){
+    createSpaces() {
         const spaces = [];
-        for (let x = 0; x < this.columns; x++){ // we're going to create the columns
+        for (let x = 0; x < this.columns; x++) { // we're going to create the columns
             const column = [];
 
-            for (let y = 0; y < this.rows; y++){ // which need to be made of row spaces
+            for (let y = 0; y < this.rows; y++) { // which need to be made of row spaces
                 const space = new Space(x, y);
                 column.push(space);
             }
@@ -21,13 +21,10 @@ class Board{
     }
 
     drawHTMLBoard() {
-        for (let column of this.spaces){
-            for (let space of column){
+        for (let column of this.spaces) {
+            for (let space of column) {
                 space.drawSVGSpace();
             }
         }
-    }
-    startGame(){
-
     }
 }

@@ -27,4 +27,7 @@ class Board{
             }
         }
     }
+    startGame(){
+
+    }
 }

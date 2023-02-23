@@ -30,9 +30,9 @@ class Token{
     }
 
     moveRight(){
-        if (this.columnLocation !== 7){
+        if (this.columnLocation < 6){
             this.columnLocation += 1;
-            this.htmlToken.style.right = this.offsetLeft + 76;
+            this.htmlToken.style.left = this.offsetLeft + 76;
         }
     }
 }

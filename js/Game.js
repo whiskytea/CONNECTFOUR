@@ -34,18 +34,29 @@ class Game{
         this.ready = true;
     }
 
-    // playToken(){
-    //     //loop through the column spaces from furthest to closest
-    //     let dropColumn = this.board.spaces[this.activePlayer.activeToken];
-    //     for (let i = dropColumn.length(); i > 0; i--){ //goes through the column from bottom to top
-    //         if (dropcolumn[i].token === null){
-    //             dropColumn[i].token = this.
-    //         }
-    //     }
-    //     //check games state for a winner
-    //     //swap active player
-    //     //load up next token
-    // }
+    playToken(){
+        //loop through the column spaces from furthest to closest
+        let dropColumn = this.board.spaces[this.activePlayer.activeToken.columnLocation];
+        console.log(dropColumn);
+        //make sure the column isn't already full, and if not drop token, check game state, swap turns
+        for (let i = dropColumn.length; i > 0; i--){ //goes through the column from bottom to top
+            if (dropColumn[i].token === null){
+                dropColumn[i].token = this.activePlayer.activeToken.id;
+                //check games state for a winner
+                //swap active player
+                this.players.forEach(player => {
+                    if (player.active) {
+                        player.active = false;
+                    } else {
+                        player.active = true;
+                    }
+                });
+                //load up next token
+                this.activePlayer.activeToken.drawHTMLToken();
+            }
+        }
+
+    }
 
     // HANDLE KEY COMMANDS
     handleKeydown(e){

@@ -37,7 +37,8 @@ class Token{
     }
 
     moveDown(space){
-        this.htmlToken.style.top = `${1*space}px`;
+        let distance = space*76;
+        this.htmlToken.style.top = `${0+distance}px`;
     }
 }
 

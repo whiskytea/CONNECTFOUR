@@ -40,10 +40,15 @@ class Game{
         //make sure the column isn't already full, and if not drop token, check game state, swap turns
         for (let i = dropColumn.length; i > 0; i--){ //goes through the column from bottom to top
             let index = i-1;
-            console.log(dropColumn[index]);
+
             if (dropColumn[index].token === null){
+
                dropColumn[index].token = this.activePlayer.activeToken.id;
+                console.log(dropColumn[index].token);
                //check games state for a winner
+               //change the active token's location
+                this.activePlayer.activeToken.moveDown(index);
+                this.activePlayer.activeToken.inPlay = true;
                //swap active player
                this.players.forEach(player => {
                    if (player.active) {
@@ -54,6 +59,7 @@ class Game{
                });
                //load up next token
                this.activePlayer.activeToken.drawHTMLToken();
+               break;
             }
         }
 

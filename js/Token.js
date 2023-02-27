@@ -35,6 +35,10 @@ class Token{
             this.htmlToken.style.left = this.offsetLeft + 76;
         }
     }
+
+    moveDown(space){
+        this.htmlToken.style.top = `${1*space}px`;
+    }
 }
 
 //token color

@@ -1,5 +1,5 @@
 class Player{
-    constructor(id, name, color, active = false) {
+    constructor(name, color, id, active = false) {
         this.id = id;
         this.name = name;
         this.color = color;

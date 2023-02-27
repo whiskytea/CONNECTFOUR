@@ -44,12 +44,15 @@ class Game{
             if (dropColumn[index].token === null){
 
                dropColumn[index].token = this.activePlayer.activeToken.id;
-                console.log(dropColumn[index].token);
-               //check games state for a winner
-               //change the active token's location
+               //change the active token's location and state
                 this.activePlayer.activeToken.moveDown(index);
                 this.activePlayer.activeToken.inPlay = true;
-               //swap active player
+
+                //check game state
+                let winCount = 0;
+                if (this.board.spaces[dropColumn-1][index].token)
+
+                //swap active player
                this.players.forEach(player => {
                    if (player.active) {
                        player.active = false;

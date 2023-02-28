@@ -48,6 +48,14 @@ class Game{
                 token.moveDown(index);
 
                 //check game state
+                //check vertical
+                let owner = dropColumn[index].token.owner();
+                let tokens = [owner];
+                //check north
+                    for (let i = 0; i < 6; i++){
+                        let space = 
+                    }
+
 
                 //swap active player
                this.players.forEach(player => {

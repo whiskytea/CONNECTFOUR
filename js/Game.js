@@ -43,19 +43,40 @@ class Game{
             let index = i-1;
             let token = this.activePlayer.activeToken;
             if (dropColumn[index].token === null){
-               dropColumn[index].token = token.id;
+               dropColumn[index].token = token;
                //change the active token's location and state
                 token.moveDown(index);
 
                 //check game state
                 //check vertical
-                let owner = dropColumn[index].token.owner();
-                let tokens = [owner];
-                //check north
-                    for (let i = 0; i < 6; i++){
-                        let space = 
+                let owner = dropColumn[index].owner.id;
+                let collectIds = [];
+                //check column
+                for(let space of dropColumn){
+                    // if (space.owner === owner){
+                    //     tokenMatchCol.push(space)
+                    // }
+                    if(space.owner !== null){
+                        collectIds.push(space.owner.id);
                     }
 
+                }
+                if (collectIds.length >= 4){
+                    for(let i = 0; i < collectIds.length; i++){
+                        console.log(collectIds);
+                        if(collectIds[i] === collectIds[i+1]){
+                            if(collectIds[i+1] === collectIds[i=2] && collectIds[i+2] !== 'undefined'){
+                                if(collectIds[i+2] === collectIds[i+3] && collectIds[i+3] !== 'undefined'){
+                                    if(collectIds[i+3] === collectIds[i+4] && collectIds[i+4] !== 'undefined') {
+                                        console.log(collectIds[i+3]);
+                                        console.log(collectIds[i+4]);
+                                        alert(`player ${collectIds[i]} wins`);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
 
                 //swap active player
                this.players.forEach(player => {

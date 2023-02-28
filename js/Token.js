@@ -39,6 +39,7 @@ class Token{
     moveDown(space){
         let distance = space*76;
         this.htmlToken.style.top = `${0+distance}px`;
+        this.inPlay = true;
     }
 }
 

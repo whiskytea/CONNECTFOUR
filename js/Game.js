@@ -39,17 +39,15 @@ class Game{
         let dropColumn = this.board.spaces[this.activePlayer.activeToken.columnLocation];
         //make sure the column isn't already full, and if not drop token, check game state, swap turns
 
-        for (let i = dropColumn.length; i > 0; i--){ //goes through the column from bottom to top
-            let index = i-1;
+        for (let x = dropColumn.length-1; x > 0; x--){ //goes through the column from bottom to
             let token = this.activePlayer.activeToken;
-            if (dropColumn[index].token === null){
-               dropColumn[index].token = token;
+            if (dropColumn[x].token === null){
+               dropColumn[x].token = token;
                //change the active token's location and state
-                token.moveDown(index);
+                token.moveDown(x);
 
                 //check game state
                 //check vertical
-                let owner = dropColumn[index].owner.id;
                 let collectIds = [];
                 //check column
                 for(let space of dropColumn){

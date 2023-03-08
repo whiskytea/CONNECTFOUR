@@ -46,32 +46,31 @@ class Game{
                //change the active token's location and state
                 token.moveDown(x);
 
-                //check game state
+                // *** check game state *** //
+
                 //check vertical
-                let collectIds = [];
-                //check column
-                for(let space of dropColumn){
-                    // if (space.owner === owner){
-                    //     tokenMatchCol.push(space)
-                    // }
-                    if(space.owner !== null){
-                        collectIds.push(space.owner.id);
-                    }
+                    let collectIds = [];
 
-                }
-                if (collectIds.length >= 4){
-                    for(let i = 0; i < collectIds.length; i++) {
-                        if (collectIds[i] === collectIds[i+1] &&    /// just a giant stack of conditionals
-                            collectIds[i] === collectIds[i+2] &&
-                            collectIds[i] === collectIds[i+3]) {
-
-                                console.log(collectIds[i + 3]);
-                                console.log(collectIds[i + 4]);
-                                alert(`player ${collectIds[i]} wins`);
-
+                    for(let space of dropColumn){  //check column
+                        if(space.owner !== null){
+                            collectIds.push(space.owner.id);
                         }
                     }
-                }
+                    if (collectIds.length >= 4){
+                        for(let i = 0; i < collectIds.length; i++) {
+                            if (collectIds[i] === collectIds[i+1] &&    /// just a giant stack of conditionals
+                                collectIds[i] === collectIds[i+2] &&
+                                collectIds[i] === collectIds[i+3]) {
+
+                                    console.log(collectIds[i + 3]);
+                                    console.log(collectIds[i + 4]);
+                                    alert(`player ${collectIds[i]} wins`);
+
+                            }
+                        }
+                    }
+
+                //check horizontal
 
                 //swap active player
                this.players.forEach(player => {

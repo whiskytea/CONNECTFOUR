@@ -39,7 +39,7 @@ class Game{
         let dropColumn = this.board.spaces[this.activePlayer.activeToken.columnLocation];
         //make sure the column isn't already full, and if not drop token, check game state, swap turns
 
-        for (let x = dropColumn.length-1; x > 0; x--){ //goes through the column from bottom to
+        for (let x = dropColumn.length-1; x >= 0; x--){ //goes through the column from bottom to
             let token = this.activePlayer.activeToken;
             if (dropColumn[x].token === null){
                dropColumn[x].token = token;
@@ -60,18 +60,15 @@ class Game{
 
                 }
                 if (collectIds.length >= 4){
-                    for(let i = 0; i < collectIds.length; i++){
-                        console.log(collectIds);
-                        if(collectIds[i] === collectIds[i+1]){
-                            if(collectIds[i+1] === collectIds[i=2] && collectIds[i+2] !== 'undefined'){
-                                if(collectIds[i+2] === collectIds[i+3] && collectIds[i+3] !== 'undefined'){
-                                    if(collectIds[i+3] === collectIds[i+4] && collectIds[i+4] !== 'undefined') {
-                                        console.log(collectIds[i+3]);
-                                        console.log(collectIds[i+4]);
-                                        alert(`player ${collectIds[i]} wins`);
-                                    }
-                                }
-                            }
+                    for(let i = 0; i < collectIds.length; i++) {
+                        if (collectIds[i] === collectIds[i+1] &&    /// just a giant stack of conditionals
+                            collectIds[i] === collectIds[i+2] &&
+                            collectIds[i] === collectIds[i+3]) {
+
+                                console.log(collectIds[i + 3]);
+                                console.log(collectIds[i + 4]);
+                                alert(`player ${collectIds[i]} wins`);
+
                         }
                     }
                 }

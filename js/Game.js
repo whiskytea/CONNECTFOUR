@@ -56,21 +56,22 @@ class Game{
                             collectIds.push(space.owner.id);
                         }
                     }
-                    if (collectIds.length >= 4){
-                        for(let i = 0; i < collectIds.length; i++) {
-                            if (collectIds[i] === collectIds[i+1] &&    /// just a giant stack of conditionals
-                                collectIds[i] === collectIds[i+2] &&
-                                collectIds[i] === collectIds[i+3]) {
 
-                                    console.log(collectIds[i + 3]);
-                                    console.log(collectIds[i + 4]);
-                                    alert(`player ${collectIds[i]} wins`);
-
-                            }
+                    for(let i = 0; i < collectIds.length; i++) {
+                        if (collectIds[i] === collectIds[i+1] &&    /// just a giant stack of conditionals
+                            collectIds[i] === collectIds[i+2] &&
+                            collectIds[i] === collectIds[i+3]) {
+                                console.log(collectIds[i + 3]);
+                                console.log(collectIds[i + 4]);
+                                alert(`player ${collectIds[i]} wins`);
                         }
                     }
 
-                //check horizontal
+                    //check horizontal
+                    console.log(this.board.spaces);
+                }
+
+
 
                 //swap active player
                this.players.forEach(player => {
@@ -86,7 +87,6 @@ class Game{
             }
         }
 
-    }
 
     // HANDLE KEY COMMANDS
     handleKeydown(e){

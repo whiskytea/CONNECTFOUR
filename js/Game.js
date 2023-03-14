@@ -1,4 +1,4 @@
- //game container
+//game container
 //class to handle pieces
 //class to handle players
 //way to place pieces and remember location
@@ -37,55 +37,64 @@ class Game{
     playToken(){
         //loop through the column spaces from furthest to closest
         let dropColumn = this.board.spaces[this.activePlayer.activeToken.columnLocation];
+        let winner;
         //make sure the column isn't already full, and if not drop token, check game state, swap turns
 
-        for (let x = dropColumn.length-1; x >= 0; x--){ //goes through the column from bottom to
+        for (let x = dropColumn.length-1; x >= 0; x--) { //goes through the column from bottom to
             let token = this.activePlayer.activeToken;
-            if (dropColumn[x].token === null){
-               dropColumn[x].token = token;
-               //change the active token's location and state
-                token.moveDown(x);
+            if (dropColumn[x].token === null) {
+                    dropColumn[x].token = token;
+                    //change the active token's location and state
+                    token.moveDown(x);
 
-                // *** check game state *** //
+                    // *** check game state *** //
 
-                //check vertical
+                    //check vertical
                     let collectIds = [];
 
-                    for(let space of dropColumn){  //check column
-                        if(space.owner !== null){
+                    for (let space of dropColumn) {  //check column
+                        if (space.owner !== null) {
                             collectIds.push(space.owner.id);
                         }
                     }
 
-                    for(let i = 0; i < collectIds.length; i++) {
-                        if (collectIds[i] === collectIds[i+1] &&    /// just a giant stack of conditionals
-                            collectIds[i] === collectIds[i+2] &&
-                            collectIds[i] === collectIds[i+3]) {
-                                console.log(collectIds[i + 3]);
-                                console.log(collectIds[i + 4]);
-                                alert(`player ${collectIds[i]} wins`);
+                    for (let i = 0; i < collectIds.length; i++) {
+                        if (collectIds[i] === collectIds[i + 1] &&    /// just a giant stack of conditionals
+                            collectIds[i] === collectIds[i + 2] &&
+                            collectIds[i] === collectIds[i + 3]) {
+                            console.log(collectIds[i + 3]);
+                            console.log(collectIds[i + 4]);
+                            alert(`player ${collectIds[i]} wins`);
+                            winner = true;
                         }
                     }
 
                     //check horizontal
-                    console.log(this.board.spaces);
-                }
+                    // let horizontalCheck = [];
+                    // console.log(successfulSpace);
+                    // let SS_X = successfulSpace.x;
+                    // console.log(SS_X);
 
-
-
-                //swap active player
-               this.players.forEach(player => {
-                   if (player.active) {
-                       player.active = false;
-                   } else {
-                       player.active = true;
-                   }
-               });
-               //load up next token
-               this.activePlayer.activeToken.drawHTMLToken();
-               break;
             }
+
+            // if (winner){
+            //     this.ready = false;
+            // }
+
+            //swap active player
+           this.players.forEach(player => {
+               if (player.active) {
+                   player.active = false;
+               } else {
+                   player.active = true;
+               }
+           });
+
+           //load up next token
+           this.activePlayer.activeToken.drawHTMLToken();
+            break;
         }
+    }
 
 
     // HANDLE KEY COMMANDS

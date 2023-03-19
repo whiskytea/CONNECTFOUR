@@ -42,9 +42,3 @@ class Token{
         this.inPlay = true;
     }
 }
-
-//token color
-//token id
-//belongs to player id
-//token location
-//token in play

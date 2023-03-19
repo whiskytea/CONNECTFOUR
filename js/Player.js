@@ -24,10 +24,10 @@ class Player{
     get activeToken(){
         return this.unusedTokens[0];
     }
+
+    checkTokens(){
+        if(this.unusedTokens.length === 0){
+            return true;
+        }
+    }
 }
-
-
-//player ID
-//player color
-//box of player pieces
-//player turn
